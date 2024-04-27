@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import authService from "../appwrite/auth";
-import { Buttom, Button, Index, Input, Logo } from "../components/index";
+import { Button,Input, Logo } from "../components/index";
 import { login as authLogin } from "../store/authSlice";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -55,23 +55,21 @@ const Login = () => {
               label="Email: "
               placeholder="Enter your email"
               type="email"
-              {...register("email"),{
+              {...register("email",{
                 required: true,
                 validate:{
                     matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                     "Email address must be a valid address",  
                 }
-              }}
+              })}
             />
             <Input
               label="Password: "
               placeholder="Enter your password"
               type="password"
-              {...register("password"),{
+              {...register("password",{
                 required: true,
-            //    maxLength: 20,
-            //    minLength: 8,
-              }}
+              })}
             />
             <Button className="w-full" type="submit">Sign in</Button>
 
