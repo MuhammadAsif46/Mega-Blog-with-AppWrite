@@ -86,8 +86,8 @@ export class Service {
         // [
         //     [Query.equal("status", "active")]
         // ]
-        queries
-      );
+        queries,
+      )
     } catch (error) {
       console.log("Appwrite service :: getAllPost :: error", error);
       return false;
@@ -102,7 +102,7 @@ export class Service {
         config.appwriteBucketId,
         ID.unique(),
         file
-      );
+      )
     } catch (error) {
       console.log("appwrite service :: uploadFile :: error", error);
       return false;
@@ -111,11 +111,11 @@ export class Service {
 
   async deleteFile(fileId) {
     try {
-      await this.storage.deleteFile(config.appwriteBucketId, fileId);
-      return true;
+      await this.storage.deleteFile(config.appwriteBucketId, fileId)
+      return true
     } catch (error) {
       console.log("appwrite service :: deleteFile :: error", error);
-      return false;
+      return false
     }
   }
 

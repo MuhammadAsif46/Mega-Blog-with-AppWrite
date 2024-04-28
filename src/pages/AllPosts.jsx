@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import appwriteService from "../appwrite/appConfig";
-import { Conntainer, PostCard } from "../components";
+import { Container, PostCard } from "../components";
 
 const AllPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -12,7 +12,7 @@ const AllPosts = () => {
   });
   return (
     <div className="py-8 w-full">
-      <Conntainer>
+      <Container>
         <div className="flex flex-wrap">
           {posts.map((post) => (
             <div key={post.$id} className="p-2 w-1/4">
@@ -20,7 +20,7 @@ const AllPosts = () => {
             </div>
           ))}
         </div>
-      </Conntainer>
+      </Container>
     </div>
   );
 };
